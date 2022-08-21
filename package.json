@@ -25,10 +25,10 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/honojs/middleware-template.git"
+    "url": "https://github.com/hagishi/hono-graphql-yoga"
   },
-  "homepage": "https://github.com/honojs/middleware-template",
-  "author": "Yusuke Wada <yusuke@kamawada.com> (https://github.com/yusukebe)",
+  "homepage": "https://github.com/hagishi/hono-graphql-yoga",
+  "author": "hagishi",
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
     "access": "public"

@@ -1,40 +1,37 @@
-# Hello middleware for Hono
+# graphql-yoga middleware for Hono
 
-An example project of the third-party middleware for [Hono](https://github.com/honojs/hono).
-This middleware add `X-Message` header to the Response.
+graphql-yoga middleware for [Hono](https://github.com/honojs/hono).
 
 ## Usage
 
 ```ts
-import { hello } from '@honojs/hello'
+import { graphqlServer } from '@honojs/graphqlyoga'
 import { Hono } from 'hono'
 
 const app = new Hono()
 
-app.use('*', hello('Hello!! Hono!!'))
+app.use('*', graphqlServer({
+  schema: {
+    typeDefs: /* GraphQL */ `
+      type Query {
+        hello: String!
+      }
+    `,
+    resolvers: {
+      Query: {
+        hello: () => 'hello',
+      },
+    },
+  },
+})
 app.get('/', (c) => c.text('foo'))
 
 export default app
 ```
 
-## Deno
-
-```ts
-import { serve } from 'https://deno.land/std/http/server.ts'
-import { hello } from 'https://deno.land/x/hono_hello/mod.ts'
-import { Hono } from 'https://deno.land/x/hono/mod.ts'
-
-const app = new Hono()
-
-app.use('*', hello('Hello!! Hono!!'))
-app.get('/', (c) => c.text('foo'))
-
-serve(app.fetch)
-```
-
 ## Author
 
-Yusuke Wada <https://github.com/yusukebe>
+hagishi
 
 ## License
 
