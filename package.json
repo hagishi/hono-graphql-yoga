@@ -1,0 +1,62 @@
+{
+  "name": "@honojs/graphqlyoga",
+  "version": "0.0.1",
+  "description": "graphql-yoga middleware for Hono",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "test:deno": "deno test deno_test",
+    "test:all": "yarn test",
+    "denoify": "rimraf deno_dist && denoify",
+    "build": "rimraf dist && tsc",
+    "prerelease": "yarn denoify && yarn build && yarn test:all",
+    "release": "yarn publish"
+  },
+  "denoify": {
+    "port": {
+      "hono": "honojs/hono"
+    }
+  },
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/honojs/middleware-template.git"
+  },
+  "homepage": "https://github.com/honojs/middleware-template",
+  "author": "Yusuke Wada <yusuke@kamawada.com> (https://github.com/yusukebe)",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "dependencies": {
+    "@graphql-yoga/common": "^2.12.7",
+    "graphql": "^16.6.0",
+    "hono": "^2.0.6"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^3.14.0",
+    "@types/jest": "^28.1.4",
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
+    "denoify": "^0.11.1",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-define-config": "^1.6.0",
+    "eslint-import-resolver-typescript": "^3.4.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "jest": "^28.1.2",
+    "jest-environment-miniflare": "^2.7.0",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^28.0.5",
+    "typescript": "^4.7.4"
+  }
+}
