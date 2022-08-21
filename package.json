@@ -1,5 +1,5 @@
 {
-  "name": "@honojs/graphqlyoga",
+  "name": "@hagishi/graphqlyoga",
   "version": "0.0.1",
   "description": "graphql-yoga middleware for Hono",
   "main": "dist/index.js",
@@ -30,7 +30,7 @@
   "homepage": "https://github.com/hagishi/hono-graphql-yoga",
   "author": "hagishi",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org",
+    "registry": "https://npm.pkg.github.com/",
     "access": "public"
   },
   "dependencies": {
